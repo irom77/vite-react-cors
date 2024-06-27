@@ -1,6 +1,6 @@
 # How to allow only local requests to express.js backend ?
 
-CORS is not doing the job
+CORS is not doing the job, not sure why..
 
 ```
 npm run dev
