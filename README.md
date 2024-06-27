@@ -1,8 +1,12 @@
-# React + Vite
+# How to allow only local requests to express.js backend ?
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CORS is not doing the job
 
-Currently, two official plugins are available:
+```
+npm run dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+node index.js
+```
+
+To allow only local requests to an Express.js backend, you can create middleware that checks the request's origin IP address. If the IP address is not local, the middleware can reject the request. 
+
