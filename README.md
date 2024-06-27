@@ -10,3 +10,17 @@ node index.js
 
 To allow only local requests to an Express.js backend, you can create middleware that checks the request's origin IP address. If the IP address is not local, the middleware can reject the request. 
 
+## Test
+
+```
+
+$ curl http://1.2.3.4:8080/api/hello
+
+Access denied
+
+$ curl http://localhost:8080/api/hello
+
+{"message":"Hello from the backend!"}
+
+```
+
