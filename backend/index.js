@@ -4,6 +4,7 @@ const express = require('express');
 
 const app = express();
 const PORT = 8080;
+const oneDay=8640000
 
 // Middleware to check if the request is local
 const localOnly = (req, res, next) => {
@@ -29,7 +30,7 @@ const allowLocalRequestsOnly = (req, res, next) => {
 // Apply the middleware to all routes
 app.use(localOnly);
 // app.use(allowLocalRequestsOnly);
-
+app.use(express.static('dist', {maxAge:oneDay}))
 app.get('/api/hello', (req, res) => {
   res.json({ message: 'Hello from the backend!' });
 });
